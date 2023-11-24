@@ -12,3 +12,28 @@ export const textToBinary = (text: string): string => {
 
   return binaryString;
 };
+
+export const generateRandomKey = (): string => {
+  let key = '';
+
+  // Generate 56 bits for the effective key
+  for (let i = 0; i < 7; i++) {
+    const randomByte = Math.floor(Math.random() * 256);
+    const randomBinary = randomByte.toString(2).padStart(8, '0');
+    key += randomBinary;
+  }
+
+  // Add 8 bits for parity (ignoring for simplicity, as parity bits are not used in DES)
+  return key;
+};
+
+export const splitIntoEightCharStrings = (input: string): string[] => {
+  const result: string[] = [];
+
+  for (let i = 0; i < input.length; i += 8) {
+    const eightChars = input.slice(i, i + 8);
+    result.push(eightChars);
+  }
+
+  return result;
+};
