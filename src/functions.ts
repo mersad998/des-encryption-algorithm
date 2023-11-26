@@ -1,3 +1,5 @@
+import CryptoJS from 'crypto-js';
+
 export const textToBinary = (text: string): string => {
   let binaryString = '';
 
@@ -36,4 +38,21 @@ export const splitIntoEightCharStrings = (input: string): string[] => {
   }
 
   return result;
+};
+
+export const encryptWithDES = (plaintext: string, desKey: string): string => {
+  // Convert the key and text to WordArray
+  const keyWordArray = CryptoJS.enc.Utf8.parse(desKey);
+  const textWordArray = CryptoJS.enc.Utf8.parse(plaintext);
+
+  // Perform DES encryption
+  const encrypted = CryptoJS.DES.encrypt(textWordArray, keyWordArray, {
+    mode: CryptoJS.mode.ECB, // Electronic Codebook mode (not recommended for secure use)
+    padding: CryptoJS.pad.Pkcs7, // PKCS #7 padding
+  });
+
+  // Convert the encrypted data to a base64-encoded string
+  const encryptedBase64: string = CryptoJS.enc.Base64.stringify(encrypted.ciphertext);
+
+  return encryptedBase64;
 };
