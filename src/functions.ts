@@ -16,17 +16,22 @@ export const textToBinary = (text: string): string => {
 };
 
 export const generateRandomKey = (): string => {
-  let key = '';
+  const dynamicKey = '';
+  const staticKey = '01001111111111010111000110100001001100111011111001110100';
 
-  // Generate 56 bits for the effective key
-  for (let i = 0; i < 7; i++) {
-    const randomByte = Math.floor(Math.random() * 256);
-    const randomBinary = randomByte.toString(2).padStart(8, '0');
-    key += randomBinary;
-  }
+  //  for dynamic key , you can uncomment this section
+  /**
+   *  // Generate 56 bits for the effective key
+   *
+   *    for (let i = 0; i < 7; i++) {
+   *      const randomByte = Math.floor(Math.random() * 256);
+   *      const randomBinary = randomByte.toString(2).padStart(8, '0');
+   *      dynamicKey += randomBinary;
+   *    }
+   */
 
   // Add 8 bits for parity (ignoring for simplicity, as parity bits are not used in DES)
-  return key;
+  return dynamicKey || staticKey;
 };
 
 export const splitIntoEightCharStrings = (input: string): string[] => {
