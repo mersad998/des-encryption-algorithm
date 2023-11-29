@@ -1,30 +1,32 @@
-# React + TypeScript + Vite
+# DES Encryption Visualizer
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## Overview
 
-Currently, two official plugins are available:
+Welcome to the DES Encryption Visualizer! This web application provides a visual representation of the Data Encryption Standard (DES) encryption algorithm. DES is a widely used symmetric-key algorithm for the encryption of electronic data.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Features
 
-## Expanding the ESLint configuration
+1. **Input to Binary Conversion:** Converts the user-provided input into binary representation.
+2. **Key Generation:** Generates a 56-bit key for use in the DES algorithm.
+3. **Block Drawing:** Visualizes the 64-bit blocks used in the DES encryption process.
+4. **Cipher Text Generation:** Demonstrates the generation of cipher text using the DES algorithm.
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+## Usage
 
-- Configure the top-level `parserOptions` property like this:
+1. Access the deployed version of the app: [DES Encryption Visualizer](https://mersad998.github.io/des-encryption-algorithm/)
+2. Enter your desired input text in the provided input field.
+3. Follow the step-by-step visual representation to understand how DES encrypts the input.
+4. Explore each phase, from input to binary conversion to the generation of the final cipher text.
 
-```js
-export default {
-  // other rules...
-  parserOptions: {
-    ecmaVersion: 'latest',
-    sourceType: 'module',
-    project: ['./tsconfig.json', './tsconfig.node.json'],
-    tsconfigRootDir: __dirname,
-  },
-}
-```
+## Deployment
 
-- Replace `plugin:@typescript-eslint/recommended` to `plugin:@typescript-eslint/recommended-type-checked` or `plugin:@typescript-eslint/strict-type-checked`
-- Optionally add `plugin:@typescript-eslint/stylistic-type-checked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and add `plugin:react/recommended` & `plugin:react/jsx-runtime` to the `extends` list
+The deployed version of the app can be accessed [here](https://mersad998.github.io/des-encryption-algorithm/).
+
+## Technologies Used
+
+- HTML
+- CSS
+- JavaScript
+- ViteJs
+
+Happy encrypting! 🚀
